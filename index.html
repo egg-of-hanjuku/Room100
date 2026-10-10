@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room100</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1>Room100</h1>
+    <div id="window">
+        <canvas id="canvas" width="960" height="540"></canvas>
+        <canvas id="battle" width="960" height="540"></canvas>
+    </div>
+    
+    <div class="button_box">
+        <div id="arrow_box">
+            <button id="up_btn" onclick="Arrow(0)">↑</button>
+            <button id="left_btn" onclick="Arrow(1)">←</button>
+            <button id="right_btn" onclick="Arrow(2)">→</button>
+            <button id="down_btn" onclick="Arrow(3)">↓</button>
+        </div>
+        <div id="a_box">
+            <button id="a_btn" onclick="PushA()">A</button>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
