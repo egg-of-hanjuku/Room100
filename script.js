@@ -5,26 +5,6 @@ let isMovable=true;
 
 let level=1, leaf=0;
 
-addEventListener("keydown", (e)=>{
-    if(isMovable){
-        if(e.key=='ArrowUp' && !e.repeat){
-            Move(current, 0);
-        }
-        else if(e.key=='ArrowLeft' && !e.repeat){
-            Move(current, 1);
-        }
-        else if(e.key=='ArrowRight' && !e.repeat){
-            Move(current, 2);
-        }
-        else if(e.key=='ArrowDown' && !e.repeat){
-            Move(current, 3);
-        }
-    }
-    if(e.key=='z' && !e.repeat){
-        console.log('z');
-    }
-})
-
 function Arrow(n){
     if(isMovable)
         Move(current, n);
@@ -181,7 +161,7 @@ async function Battle(n, lv){
                 while(waitA==1)await sleep(50);
                 continue;
             }else{
-                let heal=Math.floor(Math.random()*2/3*playerStatus.HP);
+                let heal=Math.floor((Math.random()/3+ 1/3)*playerStatus.HP);
                 HP+=heal;
                 leaf--;
                 logWindow();
