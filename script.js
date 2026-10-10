@@ -78,10 +78,10 @@ let HP=20;
 let monsterList=[
     {id:"slime", name: "スライム", status:{BHP: 60, Batk:10, Bdef: 5, HP: 16, atk:5, def: 15}},
     {id:"otofu", name: "おとうふ", status:{BHP: 120, Batk:5, Bdef: 10, HP: 25, atk:7, def: 4}},
-    {id:"firstpenguin", name: "ファーストペンギン", status:{BHP: 60, Batk:12, Bdef: 12, HP: 20, atk:10, def: 20}},
-    {id:"pentapod", name: "ペンタポット", status:{BHP: 120, Batk:30, Bdef: 30, HP: 20, atk:8, def: 35}},
-    {id:"sirocodile", name: "シロコダイル", status:{BHP: 90, Batk:25, Bdef: 25, HP: 18, atk:15, def: 20}},
-    {id:"breadbullet", name: "ブレッドバレット", status:{BHP: 70, Batk:30, Bdef: 16, HP: 13, atk:25, def: 20}},
+    {id:"firstpenguin", name: "ファーストペンギン", status:{BHP: 60, Batk:12, Bdef: 12, HP: 17, atk:10, def: 20}},
+    {id:"pentapod", name: "ペンタポット", status:{BHP: 120, Batk:12, Bdef: 30, HP: 20, atk:8, def: 35}},
+    {id:"sirocodile", name: "シロコダイル", status:{BHP: 90, Batk:18, Bdef: 25, HP: 18, atk:15, def: 20}},
+    {id:"breadbullet", name: "ブレッドバレット", status:{BHP: 70, Batk:30, Bdef: 16, HP: 13, atk:25, def: 12}},
     {id:"akuma", name: "あくま", status:{BHP: 100, Batk:35, Bdef: 25, HP: 20, atk:16, def: 25}},
     {id:"dragon", name: "ドラゴン", status:{BHP: 200, Batk:40, Bdef: 30, HP: 30, atk:25, def: 30}},
 ];
@@ -93,6 +93,7 @@ let waitA=0;
 async function Battle(n, lv){
     ctx.fillStyle='rgba(0,0,0,0.1)';
     let monster=monsterList[n];
+    select=1;
     let monsterStatus={
         HP: Math.floor((monster.status.BHP + monster.status.HP*lv)/10),
         atk: Math.floor((monster.status.Batk + monster.status.atk*lv)/10),
