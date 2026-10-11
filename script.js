@@ -60,10 +60,10 @@ let monsterList=[
     {id:"otofu", name: "おとうふ", status:{BHP: 120, Batk:5, Bdef: 10, HP: 25, atk:7, def: 4}},
     {id:"firstpenguin", name: "ファーストペンギン", status:{BHP: 60, Batk:12, Bdef: 12, HP: 17, atk:14, def: 20}},
     {id:"pentapod", name: "ペンタポット", status:{BHP: 120, Batk:12, Bdef: 30, HP: 20, atk:8, def: 35}},
-    {id:"sirocodile", name: "シロコダイル", status:{BHP: 90, Batk:18, Bdef: 25, HP: 23, atk:15, def: 25}},
-    {id:"breadbullet", name: "ブレッドバレット", status:{BHP: 70, Batk:30, Bdef: 16, HP: 13, atk:25, def: 12}},
-    {id:"akuma", name: "あくま", status:{BHP: 100, Batk:35, Bdef: 25, HP: 20, atk:17, def: 25}},
-    {id:"dragon", name: "ドラゴン", status:{BHP: 200, Batk:35, Bdef: 30, HP: 30, atk:22, def: 30}},
+    {id:"sirocodile", name: "シロコダイル", status:{BHP: 90, Batk:18, Bdef: 25, HP: 23, atk:15, def: 27}},
+    {id:"breadbullet", name: "ブレッドバレット", status:{BHP: 70, Batk:30, Bdef: 16, HP: 14, atk:25, def: 15}},
+    {id:"akuma", name: "あくま", status:{BHP: 100, Batk:25, Bdef: 25, HP: 23, atk:18, def: 30}},
+    {id:"dragon", name: "ドラゴン", status:{BHP: 200, Batk:30, Bdef: 30, HP: 30, atk:22, def: 30}},
 ];
 
 let select=1;
@@ -323,11 +323,21 @@ for(i=0; i<4; i++){
         }
     }
 }
-for(i=0; i<3; i++){
+for(i=0; i<2; i++){
     while(1){
-        let r=Math.floor(Math.random()*17)+80;
+        let r=Math.floor(Math.random()*9)+80;
         if(mapping[r].event.number==0){
             mapping[r].event={number:1, monster:Math.floor(Math.random()*2)+4, finish:0};
+            mapping[r].isStop=1;
+            break;
+        }
+    }
+}
+for(i=0; i<2; i++){
+    while(1){
+        let r=Math.floor(Math.random()*8)+89;
+        if(mapping[r].event.number==0){
+            mapping[r].event={number:1, monster:Math.floor(Math.random()*2)+5, finish:0};
             mapping[r].isStop=1;
             break;
         }
