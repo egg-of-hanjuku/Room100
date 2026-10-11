@@ -57,11 +57,11 @@ let HP=20;
 
 let monsterList=[
     {id:"slime", name: "スライム", status:{BHP: 60, Batk:10, Bdef: 5, HP: 16, atk:5, def: 15}},
-    {id:"otofu", name: "おとうふ", status:{BHP: 120, Batk:5, Bdef: 10, HP: 25, atk:7, def: 4}},
-    {id:"firstpenguin", name: "ファーストペンギン", status:{BHP: 60, Batk:12, Bdef: 12, HP: 17, atk:14, def: 20}},
-    {id:"pentapod", name: "ペンタポット", status:{BHP: 120, Batk:12, Bdef: 30, HP: 20, atk:8, def: 35}},
-    {id:"sirocodile", name: "シロコダイル", status:{BHP: 90, Batk:18, Bdef: 25, HP: 23, atk:15, def: 27}},
-    {id:"breadbullet", name: "ブレッドバレット", status:{BHP: 70, Batk:30, Bdef: 16, HP: 14, atk:25, def: 15}},
+    {id:"otofu", name: "おとうふ", status:{BHP: 100, Batk:5, Bdef: 7, HP: 22, atk:7, def: 4}},
+    {id:"firstpenguin", name: "ファーストペンギン", status:{BHP: 60, Batk:12, Bdef: 12, HP: 17, atk:15, def: 20}},
+    {id:"pentapod", name: "ペンタポット", status:{BHP: 120, Batk:12, Bdef: 30, HP: 20, atk:8, def: 40}},
+    {id:"sirocodile", name: "シロコダイル", status:{BHP: 90, Batk:18, Bdef: 25, HP: 24, atk:15, def: 27}},
+    {id:"breadbullet", name: "ブレッドバレット", status:{BHP: 70, Batk:30, Bdef: 16, HP: 15, atk:25, def: 15}},
     {id:"akuma", name: "あくま", status:{BHP: 100, Batk:25, Bdef: 25, HP: 23, atk:18, def: 30}},
     {id:"dragon", name: "ドラゴン", status:{BHP: 200, Batk:30, Bdef: 30, HP: 30, atk:22, def: 30}},
 ];
@@ -167,6 +167,8 @@ async function Battle(n, lv){
                 logWindow();
                 Reload(current);
                 ctx.drawImage(player, 432, 222);
+                ctx.fillStyle='rgba(0,0,0,0.6)';
+                ctx.fillRect(210, 0, 540, 540);
                 if(HP>playerStatus.HP){
                     HP=playerStatus.HP
                     btx.fillText('HPがまんたんになった', 250, 395);
